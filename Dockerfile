@@ -23,6 +23,7 @@ RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
 RUN curl -sS https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 46C2130DFD2497F5 A040830F7FAC5991 1397BC53640DB551
 RUN curl -sL https://deb.nodesource.com/setup_7.x | bash
+RUN echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     software-properties-common \
