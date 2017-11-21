@@ -26,7 +26,6 @@ RUN curl -sL https://deb.nodesource.com/setup_7.x | bash
 RUN echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    npm \
     software-properties-common \
     python-software-properties \
     openssh-client \
