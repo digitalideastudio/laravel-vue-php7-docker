@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
 
 # Install locales
 RUN apt-get update && apt-get install -y \
-    locales
+    locales curl
 RUN locale-gen en_US.UTF-8 && export LANG=en_US.UTF-8
 RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
 RUN curl -sS https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
