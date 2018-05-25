@@ -79,7 +79,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 RUN a2enmod rewrite
-RUN cwd
+RUN pwd
 
 ### Final server prep
 #####################
