@@ -51,7 +51,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     php-redis \
     bzip2 \
     supervisor \
-    google-chrome-stable
+    google-chrome-stable \
+    nodejs
 
 # Disable XDebug on the CLI
 RUN phpdismod -s cli xdebug
