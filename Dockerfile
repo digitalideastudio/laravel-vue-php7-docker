@@ -38,6 +38,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     php7.2 \
     php7.2-cli \
     php7.2-mbstring \
+    php7.2-bcmath \
     php7.2-mongodb \
     php7.2-mysql \
     php7.2-xml \
@@ -52,7 +53,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     bzip2 \
     supervisor \
     google-chrome-stable \
-    nodejs
+    nodejs \
+    python-dev \
+    xvfb \
+    libgtk2.0-0 \
+    libnotify-dev \
+    libgconf-2-4 \
+    libnss3 \
+    libxss1 \
+    libasound2
+
+# Install AWS Environment
+RUN curl -O https://bootstrap.pypa.io/get-pip.py \
+  && python get-pip.py \
+  && pip install awscli
 
 # Disable XDebug on the CLI
 RUN phpdismod -s cli xdebug
