@@ -66,7 +66,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rsync \
     libcairo2-dev \
     libjpeg-dev \
-    libgif-dev
+    libgif-dev \
+    autoconf \
+    vim \
+    g++
 
 # Install AWS Environment
 RUN curl -O https://bootstrap.pypa.io/get-pip.py \
