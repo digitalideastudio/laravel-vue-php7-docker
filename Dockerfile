@@ -82,9 +82,9 @@ RUN chmod +x phpcs.phar
 RUN mv phpcs.phar /usr/local/bin/phpcs
 
 ## Install mess detector
-RUN wget http://static.phpmd.org/php/latest/phpmd.phar
-RUN chmod +x phpmd.phar
-RUN mv phpmd.phar /usr/local/bin/phpmd
+# RUN wget http://static.phpmd.org/php/latest/phpmd.phar
+# RUN chmod +x phpmd.phar
+# RUN mv phpmd.phar /usr/local/bin/phpmd
 
 ## Install PHPUnit
 RUN wget -O phpunit https://phar.phpunit.de/phpunit-7.phar
