@@ -63,7 +63,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libnss3 \
     libxss1 \
     libasound2 \
-    rsync
+    rsync \
+    libcairo2-dev \
+    libjpeg-dev \
+    libgif-dev
 
 # Install AWS Environment
 RUN curl -O https://bootstrap.pypa.io/get-pip.py \
