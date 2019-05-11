@@ -94,8 +94,6 @@ RUN crontab /etc/cron.d/timeragent-cron
 
 # Supervisor
 COPY laravel_queue.conf /etc/supervisor/conf.d
-RUN supervisorctl reread laravel_queue
-RUN supervisorctl reload laravel_queue
 
 # Set PHP configurations
 COPY php.ini /etc/php/7.2/apache2/php.ini
