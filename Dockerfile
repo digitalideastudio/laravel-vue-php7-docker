@@ -94,6 +94,7 @@ RUN crontab /etc/cron.d/timeragent-cron
 
 # Supervisor
 COPY laravel_queue.conf /etc/supervisor/conf.d
+RUN service supervisor start
 
 # Set PHP configurations
 COPY php.ini /etc/php/7.2/apache2/php.ini
@@ -113,7 +114,6 @@ RUN mv phpcs.phar /usr/local/bin/phpcs
 RUN wget -O phpunit https://phar.phpunit.de/phpunit-7.phar
 RUN chmod +x phpunit
 RUN mv phpunit /usr/local/bin/phpunit
-
 
 ### Install composer & Configure apache
 #######################################
@@ -135,6 +135,8 @@ RUN echo '\n\
         AllowOverride All\n\
         Require all granted\n\
 </Directory>' >> /etc/apache2/conf-enabled/security.conf
+
+RUN apt -y autoremove && apt clean && rm -r /var/lib/apt/lists/*
 
 EXPOSE 80
 
