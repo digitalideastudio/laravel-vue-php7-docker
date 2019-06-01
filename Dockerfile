@@ -129,7 +129,11 @@ RUN a2ensite 000-default
 RUN mkdir -p /var/www/html/public
 RUN chown -R www-data: /var/www
 
+#RUN a2enmod ssl
+#RUN a2ensite default-ssl
 RUN sed -i -e "s/html/html\/public/g" /etc/apache2/sites-enabled/000-default.conf
+#RUN sed -i -e "s/html/html\/public/g" /etc/apache2/sites-enabled/default-ssl.conf
+#RUN sed -i -e "s/html/html\/public/g" /etc/apache2/sites-enabled/default-ssl.conf
 RUN echo '\n\
 <Directory /var/www/>\n\
         Options Indexes FollowSymLinks\n\
@@ -141,4 +145,4 @@ RUN apt -y autoremove && apt clean && rm -r /var/lib/apt/lists/*
 
 EXPOSE 80
 
-CMD apache2ctl -k start && tail -f /var/log/apache2/access.log /var/log/apache2/error.log
+CMD apache2ctl -k start && tail -f /var/log/apache2/access.log /var/log/apache2/error.log /var/www/html/storage/logs/laravel.log
