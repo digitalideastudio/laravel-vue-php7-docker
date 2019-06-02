@@ -1,3 +1,6 @@
+## Deprecated
+Use https://github.com/digitalideastudio/docker-laravel instead
+
 # laravel-vue-php7-docker
 Docker container for Laravel &amp; Vue
 
